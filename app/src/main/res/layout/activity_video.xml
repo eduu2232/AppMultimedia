@@ -10,4 +10,43 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.edu.appmultimedia.ActivityVideo">
 
+    <Button
+        android:text="gravar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnGvideo"
+        android:layout_marginTop="57dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorAccent" />
+
+    <VideoView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/btnGvideo"
+        android:id="@+id/videoView"
+        android:layout_below="@+id/btnGvideo"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Gravar o Reproduir video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+    <Button
+        android:text="reproduir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnRvideo"
+        android:background="?attr/actionModeSplitBackground"
+        android:layout_above="@+id/videoView"
+        android:layout_alignParentEnd="true"
+        android:enabled="false"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:textColorLink="@android:color/white"
+        android:textColor="@android:color/background_light" />
 </RelativeLayout>

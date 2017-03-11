@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnAnimacions;
     Button btnCamara;
     Button btnAudio;
+    Button btnVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
         btnAnimacions = (Button) findViewById(R.id.btnAnimacions);
         btnCamara = (Button) findViewById(R.id.btnCamara);
+        btnVideo = (Button) findViewById(R.id.btnVideo);
         btnAudio = (Button) findViewById(R.id.btnAudio);
+
 
         //fem la funcio de click que ens porta a la activity corresponent
 
@@ -46,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,ActivityAudio.class);
+                startActivity(intent);
+
+            }
+        });
+        btnVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ActivityVideo.class);
                 startActivity(intent);
             }
         });
