@@ -16,6 +16,7 @@ import static com.example.edu.appmultimedia.R.id.activity_video;
 public class ActivityVideo extends AppCompatActivity {
     Button btnGravant;
     Button btnReproduir;
+    Button btnTornar;
     Uri enlace;
     VideoView video;
 
@@ -30,6 +31,7 @@ public class ActivityVideo extends AppCompatActivity {
         btnGravant=(Button) findViewById(R.id.btnGvideo);
         btnReproduir=(Button) findViewById(R.id.btnRvideo);
         video=(VideoView) findViewById(R.id.videoView);
+        btnTornar= (Button) findViewById(R.id.btnTornar);
 
         //creem el metode onClick per enregistrar video
 
@@ -42,6 +44,7 @@ public class ActivityVideo extends AppCompatActivity {
             }
         });
 
+        //reproduim el video
         btnReproduir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,12 +56,21 @@ public class ActivityVideo extends AppCompatActivity {
                 video.start();
             }
         });
+        btnTornar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityVideo.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        //guardem el video despres de gravar-lo
 
         if (resultCode==RESULT_OK){
             if (requestCode==GRAVAR_VIDEO){
